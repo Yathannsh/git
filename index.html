@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Git Workflow</title>
+    
+    
+    <style type="text/css">
+    	code{
+  background: #111;
+  color: #dedede;
+  padding: 1rem 2rem;
+  display: block;
+  max-width: 400px;
+}
+.yellow{
+  color: yellow;
+}
+.magenta{
+  color: magenta;
+}
+.red{
+  color: red;
+}
+    </style>
+    
+        <link rel="stylesheet" href="css/style.css">    
+   
+  </head>
+
+  <body>
+<div class="ribbon-wrapper">
+  <h3 class="ribbon">
+<strong class="ribbon-inner">A FOSSASIA's <a href="https://codein.withgoogle.com/" target="_blank">Google Code-in</a> Porject</strong>
+</h3>
+</div>
+    <h1>Git Workflow</h1>
+        <div id="wrapper">
+           
+            <ul>
+                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>What is Git?</h2>
+                    <p><b>Git is a version control system gifted by Sir, Linus Torvlad to the open source world. Git lets you track smallest of changes you make in your projects or repositories as they are known in git lingo. To use git you will first need to <a href ="https://git-scm.com/" target="_blank">download</a> a git client.
+                    </b></p>
+                </li>
+                 <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Repositories in git </h2>
+                    
+                    <p> <b>For git to track changes in a repository it first has to be informed about its presence. Navigate to the folder where you already have a project which you want git to track or to the folder where you wish to make a new repository.<br><br>
+                    - Right click in the folder where your repository is present and, select 'git bash here'. Follow this if you aren't comfortable with navigation in the command line. <br>
+                    - Now to declare a repository or initialize it in the git lingo, type<br><br><code>$git init </code><br><br>
+                    You could also clone a repositorty by the following command<br><br>
+                	<code>$git clone <span class="magenta"> 	&lt;Repo directory&gt;</span></code>
+
+                    </b></p>
+                </li>
+                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git branch?</h2>
+                    
+                    <p> <b> Now that you have a projet to work on its time to make changes, while making changes such as adding a new feature its always recommended to not link them with your main project or what in the git lingo is called the master branch. This is the reason git uses branching. <br>To checkout the branch you are currently on: <br><br><code>$git branch </code><br>
+                    You will get output which will tell you you are on the master branch as you haven't created any branch yet. <br> <br>
+                    <code>$git branch <br>*<span class="magenta">master</span></code><br><br>
+                    The asterix symbol indicates the branch you are currently on. Let's create a new repository. Type git branch and the name you want to give the branch <br><br>
+                    <code>$git branch new_branch</code><br>
+                    Congratulations you just created a new branch!
+                    </b></p>
+                </li>
+                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git checkout?</h2>
+                    <p><b>Now that you know how to create a new branch let's learn how to switch between branches. First check the available branches.
+            		<br> <br>
+                    <code>$git branch <br>*<span class="magenta">master<br> new_branch</span></code><br><br>
+                    Git displays the available branches. Notice the new_branch you created previously, let's switch to that branch.<br> <br>
+                    <code>$git checkout new_branch</code><br>
+                    This will switch your repositories branch to new_branch. 
+                    Let's see if it worked<br><br>
+                    <code>$git branch <br><span class="magenta">master<br></span>* <span class="magenta">new_branch</span></code><br>
+                    The change in asterix position confirms the switch.
+                   </b> </p>
+                </li>                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git status?</h2>
+                    <p>
+                    	<b>Whenever you make a change to a repository, git tracks it. For the sake of testing create a new text file in your project with the name 'text'. Now as this is a new addition to the git repository, git will recogines this. <br><br>Type $git status in the command line, and you will recieve the following output.<br>
+                    	 <code>$git status <br>Untracked files:
+						<br> <span class="red">text.txt/</span></code><br><br>
+						To learn how to add these changes to the staging area proceed to the next accordin.
+                   </b> </p>
+                </li>                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git add?</h2>
+                    <p>
+                    	<b>In the git workflow, after one makes changes to a working directory like you just did after adding a flie, they neeed to add it to the staging area. To add a particular file to the staging area type:<br><br>
+                	<code>$git add <span class="magenta">&lt;File Name&gt;</span></code>
+
+                    </b></p>
+                </li>                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git commit?</h2>
+                    <p><b>
+                    	Now the files are in the staging area,to finally add them to your repository you will need to commit them. While making a commit you are always required to add a message otherwise the commit wont be successful. To make a commit do the following. <br><br>
+                    	<code>$git commit -m "Short commit message" </code>
+                    	<br><br>
+                    	Congratulation, you just made your first commit!
+
+
+
+
+                    </b></p>
+                </li>                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git push?</h2>
+                    <p><b>Git Push is a command used for pushing your code online. After you have made your repository and you wish to make it public you need to have a git hub account to make it avaialble online.Make a github <a href ="htttp://github.io'">account </a> if you don't have one and create a new repository online.<br><br> 
+            		After making an online repository, Github will provide you with it online refrence URL. You first need to configure the git remote or the place where git will push your code. To do so 
+            		<br><br>
+                    	<code>$git remote add "Repository URL" </code>
+                    	<br><br>
+                    	After you have added a remote,you can push your code to your online repository. This how you do it.<br/><br>
+
+                    	<code>$git push origin master </code>
+                    	<br><br>
+                    	This code will push the master branch to your online repo.
+                   </b> </p>
+                </li>                <li>
+                  <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git log?</h2>
+                    <p><b>
+            		Git lets you track changes commit-by-commit, so if anything goes wrong you can go right back to the place where things worked right.
+            		This is where commit messages play a great role, while you will learn how to track commit if it weren't for commit messages all those commits wouldn't be so helpful. <br>To view all the commits made use the following function. <br/><br>
+                    	<code>$git log</code>
+                    	<br><br>
+                    This command will output a history of commit logs, which will look something like this.<br/><br>
+                    	<code>$git log<br>
+            			<span class ="yellow">
+            			commit aa2b2c34c063c94e
+            			</span><br>
+            			Author:  Your_Name<br>
+            			Date: Sat Dec 19 11;22;08 2015 +0530<br>
+            			Your commit Message
+
+                    	</code>
+                    	<br><br>
+
+                    </b></p>
+                </li><li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git rebase?</h2>
+                    <p><b>
+                    Git rebase is a function used more in open source collaboration projects. Let's say you and your friend are working on a project simultaneously. Your friend makes a change in the project by adding a new feature while you as well add the same feature in a different way. <br><br>This results in a conflict; however, if you both sit and decide and choose for one feature out of the two to be integrated, this problem can be solved by rebasing the master.<br> So if your friend's feature is what you think is better for the project you will have to rebase, and this is how you do it. <br><br>
+                    <code>
+                    $git checkout the_new_feature<br>
+                    $git rebase master</code><br><br>
+                    The first line of code above navigates to the branch you'd like to rebase your master from. Then the master is rebased to that branch.
+                	Rebasing basically re-writes the project history by creating brand new commits for each commit in the original branch.
+                    </b></p>
+                </li>                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git Stash?</h2>
+                    <p><b>
+                    	Git Stash is know as the dirt handler of Git. For instance if you are working on a project and things get messy and you wish to switch branches and leave your work as it is instead of committing them to your repository,git stash is the saviour.
+                    	Git stash is always used on a semi-eddited file, we will call that file index.html just for the sake of this tutorial.
+                    	<br>This is how git stash is used: <br><br>
+
+                		<code>
+                		$git stash<br>
+                		Saved working directory and the state index stat\<br>
+                		<span class= "magenta">WIP on master: 049d078 added the index file"</span><br>
+                		<span class =" yellow">HEAD is now at 049d078 added the index file</span><br>
+                		(To restore them type "git stash apply")</code>
+
+            			<br><br> Typing the git stash command will stash the file for you, which you can then apply to your branch anytime you need to. 
+
+
+                    </b></p>
+                </li>                <li>
+                    <input type="checkbox" checked>
+                    <i></i>
+                    <h2>Git reset?</h2>
+                    <p><b>
+                    It is common to mess up in life and writing code is no exception. One can mess up a lot of times, but git save you again with its reset function. With git reset function you can go back to the place where everything worked well.<br><br>
+                    First you need to know where things worked well. Use git log to know that. If it all worked well till the last commit this is what you do: <br><br>
+                    <code>
+                    $git reset	
+
+                    </code>
+<br><br>
+					If this doesn't you wil need to know where things did go well by git log and copy the refrence ID of the commit, and use the follwoing command.<br><br>
+					 <code>
+					 $git reset -- hard <span class= "magenta"> >&lt;Commit refrence&gt;</span><br><br>
+					 </code><br><br>
+				 	This is it! Now you can work smoothly from the place where all went well.
+
+
+                    </b></p>
+                </li>
+            </ul>
+
+
+        </div>
+                <div align="center">
+            <h4>Made with  ♥ for <a href ="http://fossasia.org" target="_blank">FOSSASIA</a></h4>
+            </div>
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
